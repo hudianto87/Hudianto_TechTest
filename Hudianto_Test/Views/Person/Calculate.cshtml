@@ -1,0 +1,51 @@
+﻿@model Hudianto_Test.Models.Person
+
+@{
+    ViewData["Title"] = "Calculate";
+}
+
+<h1>Calculate</h1>
+
+<h4>Person</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @using(Html.BeginForm("Calculate", "Person",FormMethod.Post))
+        { 
+            <form asp-action="Calculate">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="AgeOfDeath1" class="control-label"></label>
+                    <input asp-for="AgeOfDeath1" class="form-control" />
+                    <span asp-validation-for="AgeOfDeath1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="YearOfDeath1" class="control-label"></label>
+                    <input asp-for="YearOfDeath1" class="form-control" />
+                    <span asp-validation-for="YearOfDeath1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AgeOfDeath2" class="control-label"></label>
+                    <input asp-for="AgeOfDeath2" class="form-control" />
+                    <span asp-validation-for="AgeOfDeath2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="YearOfDeath2" class="control-label"></label>
+                    <input asp-for="YearOfDeath2" class="form-control" />
+                    <span asp-validation-for="YearOfDeath2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Calculate" onclick="" action="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        }
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
